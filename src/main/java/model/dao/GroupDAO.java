@@ -262,6 +262,23 @@ public class GroupDAO {
 		return null;
 	}
 	
+	public int memberCount(String groupId) {
+		String sql = "SELECT COUNT(*) FROM GROUP where groupId = ?";
+		jdbcUtil.setSqlAndParameters(sql, new Object[] {groupId}); 
+		
+		try {
+			ResultSet rs = jdbcUtil.executeQuery(); // query 실행
+			int count = rs.getInt(1);
+			return count;
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			jdbcUtil.close(); // resource 반환
+		}
+		return -1;
+	}
+	
 //	public List<Member> getMemberList(String memberName, String groupName) throws SQLException  {
 //		String sql = "select distinct phone, email from member, join where member.userid = join.userid and userName = ? and groupName= ?";
 //		jdbcUtil.setSqlAndParameters(sql, new Object[] {memberName,  groupName}); // JDBCUtil에 query문과 매개 변수 설정

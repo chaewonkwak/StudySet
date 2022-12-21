@@ -9,6 +9,9 @@ import controller.*;
 import controller.group.GroupController;
 import controller.group.GroupMemberController;
 import controller.group.ViewGroupController;
+import controller.memo.MemoController;
+import controller.memo.MemoDetailController;
+import controller.memo.UploadMemoController;
 import controller.group.SearchMemberController;
 import controller.user.LoginController;
 import controller.user.RegisterUserController;
@@ -57,6 +60,13 @@ public class RequestMapping {
 		mappings.put("/group/task/submit/form", new SubmitController());
 		//댓글
 		mappings.put("/group/task/submit/comment", new CommentController());
+		
+		// 진행상황
+		mappings.put("/group/memo/memo", new MemoController());
+		mappings.put("/group/memo/memo", new UploadMemoController());
+		mappings.put("/group/memo/detail", new MemoDetailController());
+		//댓글
+		mappings.put("/group/memo/detail", new CommentController());
 		
 		// 회비
 		mappings.put("/group/money/dues", new DuesController());

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN">
+
+-<mapper namespace="model.dao.mybatis.mapper.CommunityMapper">
+
+<cache/>
+
+
+-<insert parameterType="Memo" id="addMemo">
+
+<selectKey order="BEFORE" resultType="int" keyProperty="id">SELECT memoId_seq.nextval AS id FROM DUAL </selectKey>
+INSERT INTO Memo (memoId, userId, groupId, memoContents) VALUES (#{memoId}, #{userId}, #{groupId}, #{memoContents}) 
+</insert>
+
+<select parameterType="int" id="getMemo" resultType="Memo"> SELECT memoId AS memoId, userId AS userId, groupId AS groupId, memoContents As memoContents FROM Memo m LEFT OUTER WHERE memoId = #{memoId} </select>
+
+
+-<resultMap id="memoResultMap" type="Memo">
+
+<id property="memoId" jdbcType="VARCHAR" column="memoId"/>
+
+<result property="userId" jdbcType="VARCHAR" column="userId"/>
+
+<result property="groupId" jdbcType="VARCHAR" column="groupId"/>
+
+<result property="memoContents" jdbcType="LONGVARCHAR" column="memoContents"/>
+
+
+
+-<collection property="memoList" ofType="Memo">
+
+<id property="memoId" jdbcType="VARCHAR" column="memoId"/>
+
+<result property="userId" jdbcType="VARCHAR" column="userId"/>
+
+<result property="groupId" jdbcType="VARCHAR" column="groupId"/>
+
+<result property="memoContents" jdbcType="LONGVARCHAR" column="memoContents"/>
+
+</collection>
+
+</resultMap>
+
+<select parameterType="int" id="getList" resultMap="memoResultMap"> SELECT memoId,userId,groupId,memoContents As memoId,userId,groupId,memoContents FROM MEMO  WHERE groupId = #{groupId} </select>
+
+</mapper>

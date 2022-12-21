@@ -117,4 +117,10 @@ public class GroupManager {
 		}
 		return memberList;
 	}
+	
+	public int getMemberCount(String groupId) throws SQLException {
+		int count;
+		count = groupDao.memberCount(groupId);
+		return count;
+	}
 }
