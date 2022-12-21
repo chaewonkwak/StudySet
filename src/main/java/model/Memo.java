@@ -32,6 +32,7 @@ public class Memo {
 		this.memoContents = memoContents;
 	}
 
+	
 	public String getMemoId() {
 		return memoId;
 	}

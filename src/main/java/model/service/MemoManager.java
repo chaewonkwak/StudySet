@@ -12,6 +12,7 @@ import model.dao.*;
 
 public class MemoManager {
 	private static MemoManager memoManager = new MemoManager();
+	
 	private MemoDAO memoDao;
 
 	private MemoManager() {

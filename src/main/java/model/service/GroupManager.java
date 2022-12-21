@@ -101,6 +101,7 @@ public class GroupManager {
 //		}
 //		return memberList;
 //	}
+	
 	//그룹에 가입시 해당하는 코드가 맞는지 체크
 	public String check(String groupName, String code) throws SQLException{
 		return groupDao.check(groupName, code);

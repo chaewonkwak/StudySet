@@ -3,6 +3,7 @@ package model.dao.mapper;
 import java.util.List;
 import model.Memo;
 
+
 public class MemoMapper {
 	
 	public int addMemo(Memo memo, String userId, String groupId);

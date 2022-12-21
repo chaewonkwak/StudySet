@@ -13,6 +13,7 @@ import model.Member;
 import model.service.MemoManager;
 import model.service.GroupManager;
 
+
 public class MemoController implements Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

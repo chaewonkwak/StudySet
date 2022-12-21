@@ -279,6 +279,7 @@ public class GroupDAO {
 		return -1;
 	}
 	
+	
 //	public List<Member> getMemberList(String memberName, String groupName) throws SQLException  {
 //		String sql = "select distinct phone, email from member, join where member.userid = join.userid and userName = ? and groupName= ?";
 //		jdbcUtil.setSqlAndParameters(sql, new Object[] {memberName,  groupName}); // JDBCUtil에 query문과 매개 변수 설정
