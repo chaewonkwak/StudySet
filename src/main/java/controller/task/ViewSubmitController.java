@@ -54,6 +54,7 @@ public class ViewSubmitController implements Controller {
 					commentDate);
 			
 			try {
+				System.out.println("commentDate:" + commentDate );
 				userName = request.getParameter("userName");
 				//userName = new String(userName.getBytes("ISO8859_1"), "UTF-8");
 				cmanager.addSubmitComment(comment, submitId);

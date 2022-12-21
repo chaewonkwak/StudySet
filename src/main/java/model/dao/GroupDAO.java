@@ -169,25 +169,6 @@ public class GroupDAO {
 		return 0;
 	}
 	
-	//그룹 탈퇴
-	public int leaveGroup(Join join) throws SQLException {
-		String sql = "DELETE FROM JOIN WHERE USERID = ? AND GROUPID = ? AND GROUPNAME = ?";
-		Object[] param = new Object[] { join.getUserId(), join.getGroupId(), join.getGroupName() };
-		jdbcUtil.setSqlAndParameters(sql, param);	
-	
-		try {
-			int result = jdbcUtil.executeUpdate();
-			return result;
-		} catch (Exception ex) {
-			jdbcUtil.rollback();
-			ex.printStackTrace();
-		} finally {
-			jdbcUtil.commit();
-			jdbcUtil.close();
-		}
-		return 0;
-	}
-	
 	//해당 그룹에 이미 가입했는지 체크
 	public boolean alreadyJoin(String userId, String groupId) throws SQLException {
 		String sql = "SELECT count(*) FROM JOIN WHERE userId=? and groupId = ?";      
@@ -279,6 +260,23 @@ public class GroupDAO {
 			jdbcUtil.close(); // resource 반환
 		}
 		return null;
+	}
+	
+	public int memberCount(String groupId) {
+		String sql = "SELECT COUNT(*) FROM GROUP where groupId = ?";
+		jdbcUtil.setSqlAndParameters(sql, new Object[] {groupId}); 
+		
+		try {
+			ResultSet rs = jdbcUtil.executeQuery(); // query 실행
+			int count = rs.getInt(1);
+			return count;
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			jdbcUtil.close(); // resource 반환
+		}
+		return -1;
 	}
 	
 //	public List<Member> getMemberList(String memberName, String groupName) throws SQLException  {

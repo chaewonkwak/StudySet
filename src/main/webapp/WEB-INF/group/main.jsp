@@ -104,19 +104,17 @@
 					<tr>
 						<td><h4>${studyGroup.groupDescription}</h4></td>
 		                  <td>
-		                  	<div style="float: right; margin-right: 120px; width: 20%;">
+		                     <div style="float: right; margin-right: 120px; width: 20%;">
 		                        <p id="modal_btn" class="btn">
 		                           <a href="#modal" rel="modal:open" type="button" style="font-size:15px;">&nbsp;&nbsp;그룹원 검색</a>
-		                           	<div class="black_bg"></div>
-		                        </p>
+		                                 <div class="black_bg"></div>
+		                             </p>
 		                     </div>
 		                  </td>
 					</tr>
 					<tr>
 	                  <td><input type="button" value="가입 코드 보기" style="font-size:15px; color:black; font-weight:bold;" class="btn"
-	                     onClick="alert('그룹코드는 ' + '${studyGroup.code}' + '입니다.')" />
-	                  	<br><br>
-	                  <td>
+	                     onClick="alert('${studyGroup.code}')" /><br><br></td>
 					</tr>
 					<tr>
 						<td width="50%">

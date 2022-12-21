@@ -18,6 +18,9 @@ import controller.schedule.ChartController;
 import controller.schedule.ScheduleController;
 import controller.schedule.ViewScheduleController;
 import controller.task.*;
+import controller.memo.MemoController;
+import controller.memo.MemoDetailController;
+import controller.memo.UploadMemoController;
 
 public class RequestMapping {
 	private static final Logger logger = LoggerFactory.getLogger(DispatcherServlet.class);
@@ -55,14 +58,21 @@ public class RequestMapping {
 		mappings.put("/group/task/detail", new TaskDetailController());
 		mappings.put("/group/task/submit", new ViewSubmitController());
 		mappings.put("/group/task/submit/form", new SubmitController());
-		//댓글
+		// 댓글
 //		mappings.put("/group/task/submit", new CommentController());
-		//mappings.put("/group/task/submit", new ViewSubmitController());
+		// mappings.put("/group/task/submit", new ViewSubmitController());
 		// 회비
 		mappings.put("/group/money/dues", new DuesController());
 		mappings.put("/group/money/payment", new PaymentController());
 		mappings.put("/group/money/addPayment", new PaymentController());
 		mappings.put("/group/money/addDues", new DuesController());
+
+		// 진행상황
+		mappings.put("/group/memo/memo", new MemoController());
+		mappings.put("/group/memo/memo", new UploadMemoController());
+		mappings.put("/group/memo/detail", new MemoDetailController());
+		// 댓글
+		//mappings.put("/group/memo/detail", new CommentController());
 	}
 
 	public Controller findController(String uri) {

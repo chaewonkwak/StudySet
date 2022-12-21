@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>monday</groupId>
 	<artifactId>StudySet</artifactId>
@@ -22,6 +20,7 @@
 		<commons-fileupload.version>1.4</commons-fileupload.version>
 		<jackson-databind.version>2.12.5</jackson-databind.version>
 		<junit.version>4.13.2</junit.version>
+		<mybatis.version>3.5.7</mybatis.version>
 		<oracle-jdbc-driver.version>21.3.0.0</oracle-jdbc-driver.version>
 	</properties>
 
@@ -78,7 +77,12 @@
 			<version>${oracle-jdbc-driver.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-
+		<!--  MyBatis  -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
 		<!-- for unit test -->
 		<dependency>
 			<groupId>junit</groupId>

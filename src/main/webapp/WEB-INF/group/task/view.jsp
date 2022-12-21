@@ -97,7 +97,9 @@
 		<table>
 			<c:forEach var="comment" items="${list}">
 				<tr valign="top">
-					<td class="comm"><div class="comm_con">&nbsp;&nbsp;${comment.userId}&nbsp;|&nbsp;&nbsp;${comment.commentContents}</div></td>
+					<td class="comm"><div class="comm_con"><c:if test="${comment.annonymous eq 'Y'}">
+					
+					</c:if>&nbsp;&nbsp;${comment.userId}&nbsp;|&nbsp;&nbsp;${comment.commentContents}</div></td>
 				</tr>
 			</c:forEach>
 		</table>

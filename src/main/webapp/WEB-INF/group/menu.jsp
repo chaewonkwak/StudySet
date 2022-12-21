@@ -36,7 +36,7 @@
 		<tr class="menu"><td class="menuItem"><a href="<c:url value='/group/main' />">홈</a></td></tr>
 		<tr><td class="menuItem" ><a href="<c:url value='/schedule/calendar' />">일정</a></td></tr>
 		<tr><td class="menuItem"><a href="<c:url value='/group/task/main' />">과제</a></td></tr>
-		<tr><td class="menuItem"><a href="<c:url value='group/memo/memo' />">진행상황</a></td></tr>
+		<tr><td class="menuItem"><a href="<c:url value='/group/memo/memo' />">진행상황</a></td></tr>
 		<tr><td class="menuItem"><a href="<c:url value='/group/money/dues' />">회비</a></td></tr>
 	</table>
 	</form>
