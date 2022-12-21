@@ -13,7 +13,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import model.Memo;
 import model.dao.mapper.MemoMapper;
 
-
 public class MemoDAO {
 	private SqlSessionFactory sqlSessionFactory;
 

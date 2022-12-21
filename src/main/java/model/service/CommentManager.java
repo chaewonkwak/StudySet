@@ -29,7 +29,6 @@ public class CommentManager {
 		return commentManager;
 	}
 
-	
 	public int addSubmitComment(SubmitComment submitComment, String submitId) throws SQLException, ParseException {
 		return commentDao.addSubmitComment(submitComment, submitId);
 	}

@@ -13,7 +13,6 @@ import model.Member;
 import model.Memo;
 import model.MemoComment;
 
-
 public class CommentController implements Controller {
 
    @Override

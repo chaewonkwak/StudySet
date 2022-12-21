@@ -13,7 +13,6 @@ import model.Memo;
 import model.service.GroupManager;
 import model.service.MemoManager;
 
-
 public class MemoDetailController implements Controller{
 
 	@Override

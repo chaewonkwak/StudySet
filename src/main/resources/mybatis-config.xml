@@ -17,11 +17,11 @@
 				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
 				<property name="url" value="jdbc:oracle:thin:@dblab.dongduk.ac.kr:1521:orcl" />
 				<property name="username" value="dbpr0101" />
-				<property name="password" value="0941" />
+				<property name="password" value="0941" ></property>
 			</dataSource>
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="model/dao/mybatis/mapper/CommunityMapper.xml" />
+		<mapper resource="model/dao/mapper/MemoMapper.xml" />
 	</mappers>
 </configuration>

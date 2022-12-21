@@ -13,3 +13,4 @@ public class MemoMapper {
 	public Memo getMemo(String memoId);
 
 }
+
