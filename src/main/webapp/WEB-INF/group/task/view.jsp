@@ -57,10 +57,30 @@
 	border-radius: 10px;
 	box-shadow: inset 0px 0px 5px white;
 }
+.updateBtn{
+    background-color: #F2673B;
+    color: white;
+    position: absolute;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    height: 45px;
+    left: 86%;
+    width: 103px;
+    text-align:center;
+}
 </style>
 <title>${task.name}_${userName}과제</title>
 </head>
 <body leftmargin="0" bgcolor="#DFE5DD">
+
+<c:if test="${ param.success eq 1}">
+<script>
+	alert('댓글이 삭제되었습니다.');
+	history.replaceState({}, null, location.pathname);
+</script>
+</c:if>
 	<br>
 	<table style="width: 100%; border-collapse: collapse">
 		<tr>
@@ -71,7 +91,7 @@
 			<td style="text-align: left"><br> <br> <br>
 				<h2>&nbsp;&nbsp;&nbsp;&nbsp;${task.name}_${userName}</h2></td>
 			<td><a href="<c:url value='/group/task/submit/update' />"
-				style="border: 6px; background-color: #F2673B; color: white; position: absolute; border-radius: 10px; font-size: 25px; height: 45px; left: 85%; top: 20%; width: 103px;">
+				class="updateBtn">
 					수정하기</a></td>
 		</tr>
 		<tr>
@@ -91,8 +111,7 @@
 						var="parsedRegDate" type="date" />
 					<fmt:formatDate value="${parsedRegDate}" pattern="yyyy/MM/dd" />
 					<hr>
-					<br>&nbsp;&nbsp;${submit.submitContents} <br>${submit.filePath}<br>
-					<img src="<c:url value='/upload/${filePath}'/>" /> <br />
+					 &nbsp;&nbsp;${submit.submitContents} <br><br><br><br><br><br><br><br><br><br><hr>파일경로:${submit.filePath}<br>     
 				</div>
 			</td>
 		</tr>
@@ -105,10 +124,12 @@
 				<tr valign="top">
 					<td class="comm">
 						<div class="comm_con">
-							&nbsp;&nbsp;${comment.userId}&nbsp;|&nbsp;&nbsp;${comment.commentContents}
+							<c:if test="${comment.annonymous eq 'Y'.charAt(0)}">&nbsp;&nbsp;익명</c:if>
+							<c:if test="${comment.annonymous eq 'N'.charAt(0)}">&nbsp;&nbsp;${comment.userId}</c:if>	
+							&nbsp;|&nbsp;&nbsp;${comment.commentContents}
 						</div>
 					</td>
-					<td><c:if test='${comment.userId eq loginmember.userId}'>
+					<td width="34px"><c:if test='${comment.userId eq loginmember.userId}'>
 							<a
 								href="<c:url value='/group/comment/remove'>
 								<c:param name='userId' value='${userId}' />

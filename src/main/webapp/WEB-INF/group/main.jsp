@@ -169,10 +169,7 @@ function leave() {
 								<tr>
 									<td>
 									<form name="note" action="<c:url value='/group'/>">
-									<textarea name="quickNote" rows="30" cols="100" style="border: none; background: transparent;">
-									<c:if test="${quickNote ne null }">${quickNote}</c:if>
-									</textarea>
-									<input type="submit" value="저장">
+									<textarea name="quickNote" rows="30" cols="100" style="border: none; background: transparent;"></textarea>
 									</form>
 									</td>
 								</tr>

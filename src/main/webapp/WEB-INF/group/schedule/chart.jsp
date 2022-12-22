@@ -52,8 +52,8 @@ table td.highlighted {
 				<table style="width: 100%; height: 100%; padding: 60px;">
 					<tr>
 						<td colspan="2">
-							<h1>${studyGroup.groupName}</h1>
-							<h2 style="color: gray">일정</h2>
+							<h2>${studyGroup.groupName}</h2>
+							<h3 style="color: gray">일정</h3>
 						</td>
 					</tr>
 

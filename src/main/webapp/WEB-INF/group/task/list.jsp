@@ -74,19 +74,38 @@
 </script>
 </head>
 <body leftmargin="0" bgcolor="#DFE5DD">
+<body leftmargin="0" bgcolor="#DFE5DD">
 	<br>
 	<table style="width: 100%; border-collapse: collapse">
 		<tr>
-			<td rowspan='2' style="text-align: left; width: 130px;"><a
-				href="<c:url value='http://localhost:8080/StudySet/user/group/list' />">
-					<img src="<c:url value='/images/studysetlogo.png'/>" width="130px" />
-			</a></td>
-			<td class="title" style="text-align: left; vertical-align: top;"><br>
-				<br> <br> &nbsp;&nbsp;&nbsp;&nbsp;${studyGroup.groupName}
-				스터디</td>
-		</tr>
-		<tr>
-			<td class="title">&nbsp;&nbsp;&nbsp;&nbsp;과제</td>
+			<td style="vertical-align: top; text-align: left; width: 130px;">
+				<!-- 왼쪽 사이드(로고, 메뉴) 구성 -->
+				<table>
+					<tr>
+						<td><a
+							href="<c:url value='http://localhost:8080/StudySet/user/group/list' />">
+								<img src="<c:url value='/images/studysetlogo.png'/>"
+								width="130px" />
+						</a> <br>
+						<br></td>
+					</tr>
+					<tr>
+						<td><jsp:include page="../menu.jsp" flush="false" /></td>
+					</tr>
+				</table>
+			</td>
+			<td style="vertical-align: top">
+				<table style="width: 100%; padding: 20px;">
+					<!-- 이 테이블 안에 메인 화면 구성하면 될듯 -->
+					<tr>
+						<td colspan="2">
+							<h2>&nbsp;&nbsp;${studyGroup.groupName}</h2>
+							<h3 style="color: gray">
+								&nbsp;&nbsp;과제
+							</h3>
+						</td>
+					</tr>
+					<tr><td><h2>&nbsp;&nbsp;&nbsp;과제 목록</h2></td>
 			<td>
 				<p id="modal_btn" class="btn">
 					<a href="#modal1" rel="modal:open" type="button"
@@ -94,12 +113,6 @@
 				<div class="black_bg"></div>
 				</p>
 			</td>
-		</tr>
-		<tr>
-			<td style="height: 30px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-		</tr>
-		<tr>
-			<td colspan="3"><jsp:include page="../menu.jsp" flush="false" /></td>
 		</tr>
 		<tr>
 			<td style="overflow: auto;" class="scroll">
@@ -131,6 +144,10 @@
 				</table>
 			</td>
 		</tr>
+					
+				</table>
+			</td>
+		</tr>
 	</table>
 	<div style="display: none; height: 550px;" class="modal_wrap">
 		<!--스터디생성 모달창 영역-->
@@ -141,5 +158,6 @@
 			<jsp:include page="create.jsp"></jsp:include>
 		</div>
 	</div>
+</body>
 </body>
 </html>

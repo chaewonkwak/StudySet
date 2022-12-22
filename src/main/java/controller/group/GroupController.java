@@ -45,11 +45,7 @@ public class GroupController implements Controller{
       GroupManager manager = GroupManager.getInstance();
       StudyGroup studyGroup = manager.getGroupById(request.getParameter("groupId"));
       session.setAttribute("studyGroup", studyGroup);
-      String note = request.getParameter("quickNote");
-      if(note!=null) {
-    	  session.removeAttribute("quickNote");
-    	  session.setAttribute("quickNote", note.trim());
-      }
+     
       return "redirect:/group/main";
    }
 }

@@ -105,7 +105,7 @@ div[contenteditable=true] {
 														</c:if>
 														<tr>
 															<td>
-																<div style="height: 560px; overflow-y: scroll;">
+																<div class="scroll" style="height: 560px; overflow-y: scroll;">
 																	<table
 																		style="padding: 5px; table-layout: fixed; width: 370px;">
 																		<tr>

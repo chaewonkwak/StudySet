@@ -36,16 +36,17 @@
 }
 
 #submitBtn {
-	background-color: #F2673B;
-	color: white;
-	position: absolute;
-	border-radius: 10px;
-	border: 0;
-	outline: 0;
-	font-size: 20px;
-	height: 45px;
-	left: 86%;
-	width: 103px;
+    background-color: #F2673B;
+    color: white;
+    position: absolute;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    height: 45px;
+    left: 86%;
+    width: 103px;
+    text-align: center;
 }
 
 .item {

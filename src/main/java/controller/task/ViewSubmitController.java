@@ -1,6 +1,7 @@
 package controller.task;
 
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -65,6 +66,7 @@ public class ViewSubmitController implements Controller {
 			try {
 				System.out.println("commentDate:" + commentDate);
 				userName = request.getParameter("userName");
+				 userName = URLEncoder.encode(userName, "UTF-8");
 				// userName = new String(userName.getBytes("ISO8859_1"), "UTF-8");
 				cmanager.addSubmitComment(comment, submitId);
 				return "redirect:/group/task/submit?userId=" + userId + "&userName=" + userName + "&taskId="

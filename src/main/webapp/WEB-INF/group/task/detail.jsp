@@ -105,10 +105,13 @@
 							var="parsedRegDate" type="date" /> <fmt:formatDate
 							value="${parsedRegDate}" pattern="yyyy/MM/dd" />
 					</td>
+					<c:if test="${loginmember.userId eq member.userId}">
 					<td class="contentsTime2" style="vertical-align: middle;"><a
 						type="button" id="submitBtn"
 						href="<c:url value='/group/task/submit/form' >
-               </c:url>">&nbsp;&nbsp;제출&nbsp;&nbsp;</a></td>
+               </c:url>">&nbsp;&nbsp;제출&nbsp;&nbsp;</a></td></c:if>
+               <c:if test="${loginmember.userId ne member.userId}">
+					<td class="contentsTime2" style="vertical-align: middle;"></td></c:if>
 				</tr>
 				<tr style="height: 10px;">
 					<td></td>
