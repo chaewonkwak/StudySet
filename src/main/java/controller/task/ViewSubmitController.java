@@ -47,7 +47,7 @@ public class ViewSubmitController implements Controller {
 	      } catch (Exception e) {
 	         response.setContentType("text/html; charset=UTF-8");
 	         PrintWriter out = response.getWriter();
-	         out.println("<script>alert('과제를 제출하시길 바랍니다.'); location.href='/StudySet/group/task/detail?taskId=" + task.getTaskId()+"';</script>");
+	         out.println("<script>alert('아직 과제가 제출되지 않았습니다.'); location.href='/StudySet/group/task/detail?taskId=" + task.getTaskId()+"';</script>");
 	         out.flush();
 	         return "redirect:group/task/detail";
 	      }
