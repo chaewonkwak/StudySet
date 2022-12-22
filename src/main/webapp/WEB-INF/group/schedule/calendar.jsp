@@ -31,21 +31,20 @@ function offClick() {
     history.replaceState({}, null, location.pathname);
 }
 var eventsArray = [ 
-	<%List<Schedule> slist = (List<Schedule>) request.getAttribute("scheduleList");
-for (Schedule s : slist) {%>
-	{  date: '<%=s.getDate()%>', 
-	   title: '<%=s.getTitle()%>',
-	   id: '<%=s.getScheduleId()%>',
-	   textColor: 'black', 
-		<%if (s.getImportant() == 'Y') {%>
-		color : "#F2673B"
-		<%} else {%>
-		color: "#F2E03B"
-		<%}%>
-	},
-	<%}%>
- ];
- 
+	<c:forEach items='${scheduleList}' var="s">
+		{  date: '${s.date}', 
+		   title: '${s.title}',
+		   id: '${s.scheduleId}',
+		   textColor: 'black', 
+		   <c:if test="${s.important == 'Y'.charAt(0)}">
+			color : "#F2673B"
+			</c:if>
+		   <c:if test="${s.important == 'N'.charAt(0)}">
+			color: "#F2E03B"
+			</c:if>
+
+		},
+	</c:forEach>];
 document.addEventListener('DOMContentLoaded', function() {
    var calendarEl = document.getElementById('calendar');
    var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -68,9 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
        },
      
        eventClick: function(info) {
-         alert(info.event.id);
-         location.href="?sid="+info.event.id;
-         document.querySelector('#modal2').style.display ='block'   
+         //location.href="?sid="+info.event.id;
+         //document.querySelector('#modal2').style.display ='block'   
        },
      
        events: function(info, successCallback, failureCallback) {

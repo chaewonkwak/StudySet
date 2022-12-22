@@ -105,7 +105,7 @@
 							</h3>
 						</td>
 					</tr>
-					<tr><td><h2>&nbsp;&nbsp;&nbsp;과제 목록</h2></td>
+					<tr><td><h2>과제 목록</h2></td>
 			<td>
 				<p id="modal_btn" class="btn">
 					<a href="#modal1" rel="modal:open" type="button"

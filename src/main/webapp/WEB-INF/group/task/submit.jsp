@@ -122,11 +122,7 @@
 									${loginmember.getUserName()}</h2> <input type="button"
 								onClick="gc()" id="submitBtn" value="제출하기"></input>
 								<div class="task_submit_back2">
-									&nbsp;&nbsp;&nbsp;&nbsp;<input type="datetime-local"
-										id="DateLocal" name="submitDate"
-										style="width: 15%; text-align: center;" />
-									<hr>
-									<h3>&nbsp;&nbsp;&nbsp;&nbsp;과제 작성란</h3>
+									<h3>&nbsp;&nbsp;&nbsp;&nbsp;과제 작성란</h3><hr>
 									&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"
 										name="submitContents" id="formInput" placeholder="과제를 작성해주세요.">
 									<br> <br> <br> <input type="file"
