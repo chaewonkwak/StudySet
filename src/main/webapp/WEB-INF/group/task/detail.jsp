@@ -9,12 +9,15 @@
 <link rel=stylesheet href="<c:url value='/css/task.css' />"
 	type="text/css">
 <style>
-.submitBtn {
+#submitBtn {
+	padding: 5px 9px 7px 9px;
 	background-color: #79D997;
 	width: 81%;
-	height: 43%;
+	height: 80%;
 	align-self: center;
-	border-radius: 20px;
+	border-radius: 50px;
+	color:white;
+	margin-right:-10px;
 }
 
 .scroll {
@@ -103,7 +106,7 @@
 							value="${parsedRegDate}" pattern="yyyy/MM/dd" />
 					</td>
 					<td class="contentsTime2" style="vertical-align: middle;"><a
-						type="button" class="submitBtn"
+						type="button" id="submitBtn"
 						href="<c:url value='/group/task/submit/form' >
                </c:url>">&nbsp;&nbsp;제출&nbsp;&nbsp;</a></td>
 				</tr>

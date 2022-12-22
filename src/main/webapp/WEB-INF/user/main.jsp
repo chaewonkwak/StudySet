@@ -9,6 +9,7 @@
 	type="text/css">
 <link rel=stylesheet href="<c:url value='/css/modal.css' />"
 	type="text/css">
+<link rel=stylesheet href="<c:url value='/css/font.css' />" type="text/css">
 <title>StudySet</title>
 <script>
 	window.onload = function() {
@@ -117,7 +118,7 @@ border: 3px solid black;
 							src="<c:url value='/images/studysetlogo.png' />" />
 						</td>
 						<td align="right">
-						<a href="<c:url value='http://localhost:8080/StudySet' />">
+						<a href="<c:url value='/user/logout' />">
 								<img src="<c:url value='/images/logout.png'/>" />
 						</a> 
 						</td>
@@ -132,14 +133,14 @@ border: 3px solid black;
 							<div style="float: right; width: 20%;">
 								<p id="modal_btn2" class="btn">
 									<a href="#modal" rel="modal:open" type="button"
-										style="color: white;">스터디 가입</a>
+										style="color: white;">&nbsp; 스터디 가입</a>
 									<div class= "black_bg"></div>
 								</p>
 							</div>
 							<div style="float: right; width: 20%;">
 								<p id="modal_btn" class="btn">
 									<a href="#modal" rel="modal:open" type="button"
-										style="color: white;">스터디 생성</a>
+										style="color: white;">&nbsp;스터디 생성</a>
 									<div class= "black_bg"></div>
 								</p>
 							</div>

@@ -6,10 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel=stylesheet href="<c:url value='/css/task.css' />"
-	type="text/css">
 <link rel=stylesheet href="<c:url value='/css/modal.css' />"
 	type="text/css">
+<link rel=stylesheet href="<c:url value='/css/task.css' />"
+	type="text/css">	
 <title>StudySet: ${studyGroup.groupName}_과제 홈</title>
 <style>
 .black_bg {
@@ -23,7 +23,13 @@
 	left: 0;
 	z-index: 1;
 }
-
+.txt {
+	color:white;
+	text-align:center;
+	font-size:20px;
+	padding-right:10px;
+	padding-bottom:30px;
+}
 .scroll {
 	position: absolute;
 	width: 80%;
@@ -36,16 +42,13 @@
 	overflow: auto;
 	scrollbar-width: thin;
 }
-
 .scroll::-webkit-scrollbar {
 	width: 10px;
 }
-
 .scroll::-webkit-scrollbar-thumb {
 	background-color: #2f3542;
 	border-radius: 10px;
 }
-
 .scroll::-webkit-scrollbar-track {
 	background-color: grey;
 	border-radius: 10px;
@@ -87,7 +90,7 @@
 			<td>
 				<p id="modal_btn" class="btn">
 					<a href="#modal1" rel="modal:open" type="button"
-						style="color: white;">과제 생성</a>
+						class="txt">과제생성</a>
 				<div class="black_bg"></div>
 				</p>
 			</td>
@@ -106,6 +109,7 @@
 						<tr valign="top">
 							<td colspan="4" class="contents"
 								style="margin-bottom: 10px; vertical-align: middle"><a
+								style="left:30px;"
 								href="<c:url value='/group/task/detail'>
 								<c:param name="taskId" value="${task.taskId}" />
 								</c:url>">&nbsp;&nbsp;&nbsp;&nbsp;${task.name}</a></td>

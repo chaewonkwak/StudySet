@@ -110,7 +110,7 @@ function searchMember(){
 			<c:when test="${findMemberList ne null}">
 				<c:forEach var="mem" items="${findMemberList}">
 					<hr>${mem.userName} | 
-				 연락처: ${mem.phone}&nbsp; <a href="mailto:">${mem.email}</a><br>
+				 연락처: ${mem.phone}&nbsp; <a href="mailto:${mem.email}">${mem.email}</a><br>
 					<hr>
 				</c:forEach>
 			</c:when>

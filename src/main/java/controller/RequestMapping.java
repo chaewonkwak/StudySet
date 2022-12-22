@@ -12,6 +12,7 @@ import controller.group.GroupMemberController;
 import controller.group.ViewGroupController;
 import controller.group.SearchMemberController;
 import controller.user.LoginController;
+import controller.user.LogoutController;
 import controller.user.RegisterUserController;
 import controller.money.*;
 import controller.schedule.AddChartController;
@@ -36,6 +37,7 @@ public class RequestMapping {
 		mappings.put("/main", new ForwardController("/user/login.jsp"));
 		mappings.put("/user/join/form", new ForwardController("/user/join.jsp"));
 		mappings.put("/user/login", new LoginController());
+		mappings.put("/user/logout", new LogoutController());
 		mappings.put("/user/group/list", new ViewGroupController());
 		mappings.put("/user/main", new ForwardController("/user/main.jsp"));
 		mappings.put("/user/register", new RegisterUserController());

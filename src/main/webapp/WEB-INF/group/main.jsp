@@ -8,6 +8,7 @@
 	type="text/css">
 <link rel=stylesheet href="<c:url value='/css/modal.css'/>"
 	type="text/css">
+
 <title>StudySet: ${studyGroup.groupName}</title>
 <style>
 .btn {
@@ -126,7 +127,7 @@ function leave() {
 	                  <td>
 	                     <div style="float: right; margin-right: 120px; width: 20%;">
 	                        <p id="modal_btn" class="btn">
-	                           <a href="#modal" rel="modal:open" type="button" style="font-size:15px;">&nbsp;&nbsp;그룹원 검색</a>
+	                           <a href="#modal" rel="modal:open" type="button" style="font-size:17px; font-weight:bold;">&nbsp;&nbsp;그룹원 검색</a>
 	                                 <div class="black_bg"></div>
 	                             </p>
 	                     </div>
@@ -145,14 +146,14 @@ function leave() {
 									<td style="vertical-align: top; padding: 20px;">
 										<table style="width:80%; border-spacing:5px;">
 											<tr>
-												<td class="notice"><b>3일 회의 13시로 미뤄졌습니다.</b><br><br>
-													<name style="color:#696969">김가은</name></td>
+												<td class="notice" style="background-color:orange">
+													<b>1월 2일 월요일 오전 4:00 - 6:00 서버 점검으로 인해 접속이 지연될 수 있습니다. 이용에 불편을 드려 죄송합니다.</b><br><br>
+													<name style="color:#696969">서버관리자</name>
+												</td>
 											</tr>
 											<tr>
-												<td class="notice" style="background-color:orange">
-													<b>회비 납부 토요일까지 해주세요</b><br><br>
-													<name style="color:#696969">곽채원</name>
-												</td>
+												<td class="notice"><b>스터디셋 이벤트 진행 중!</b><br><br>
+													<name style="color:#696969">스터디셋운영진</name></td>
 											</tr>
 										</table>
 									</td>
@@ -166,7 +167,14 @@ function leave() {
 											Notes</h3></td>
 								</tr>
 								<tr>
-									<td></td>
+									<td>
+									<form name="note" action="<c:url value='/group'/>">
+									<textarea name="quickNote" rows="30" cols="100" style="border: none; background: transparent;">
+									<c:if test="${quickNote ne null }">${quickNote}</c:if>
+									</textarea>
+									<input type="submit" value="저장">
+									</form>
+									</td>
 								</tr>
 							</table>
 						</td>

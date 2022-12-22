@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
        },
      
        eventClick: function(info) {
-         //alert(info.event.id);
-         
+         alert(info.event.id);
+         location.href="?sid="+info.event.id;
          document.querySelector('#modal2').style.display ='block'   
        },
      
@@ -168,7 +168,9 @@ padding: 0px;
 			<jsp:include page="addSchedule.jsp"></jsp:include>
 		</div>
 	</div>
-	<div style="display: none; height: 600px;" class="modal_wrap" id="modal2">
+	<div style="style="<c:if test='${param.sid ne null}'>display: block;</c:if>
+   	<c:if test='${param.sid eq null || param.sid=="" }'>display: none;</c:if> 
+   	height: 600px;" class="modal_wrap" id="modal2">
 		<div class="modal_close" onclick="offClick()">
 			<a href="#" onClick="offClick()">close</a>
 		</div>

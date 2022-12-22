@@ -5,8 +5,8 @@
 <head>  
 <title>StudySet 회원가입</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel=stylesheet href="<c:url value='/css/user.css' />"
-	type="text/css">
+<link rel=stylesheet href="<c:url value='/css/user.css' />" type="text/css">
+<link rel=stylesheet href="<c:url value='/css/font.css' />" type="text/css">
 <style type="text/css">
 .info{
 font-size: 7px;

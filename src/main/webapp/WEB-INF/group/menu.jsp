@@ -25,6 +25,7 @@
 	text-decoration:underline;
 }
 </style>
+ <link rel=stylesheet href="<c:url value='/css/font.css' />" type="text/css">
 </head>
 <body>
 	<form>

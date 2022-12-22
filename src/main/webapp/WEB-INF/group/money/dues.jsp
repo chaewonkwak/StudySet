@@ -24,15 +24,20 @@
 .test {
 	border: 6px;
 	background-color: #F2673B;
-	color: white;
 	position: absolute;
 	border-radius: 10px;
-	font-size: 25px;
 	height: 45px;
 	left: 90%;
-	top: 180px;
+	top: 190px;
 	width: 100px;
 	text-align:center;
+}
+.txt {
+	color:white;
+	text-align:center;
+	font-size:20px;
+	padding-right:10px;
+	padding-bottom:30px;
 }
 </style>
 <script>
@@ -89,7 +94,7 @@
 							</form> <br></td>
 						<td width="50%" align="right" style="padding: 50px">
 							<p id="modal_btn" class="test">
-								<a href="#modal1" rel="modal:open" type="button" style="color:white;">입력하기</a>
+								<a href="#modal1" rel="modal:open" type="button" class="txt">입력하기</a>
 								<div class="black_bg"></div>
 							</p>
 						</td>

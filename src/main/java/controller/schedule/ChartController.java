@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import controller.Controller;
+import model.Member;
 import model.StudyGroup;
 import model.TimeSlot;
 import model.service.ChartManager;
+import model.service.GroupManager;
 
 public class ChartController implements Controller{
 
@@ -25,11 +27,15 @@ public class ChartController implements Controller{
 		HttpSession session = request.getSession();
 		StudyGroup studyGroup = (StudyGroup) session.getAttribute("studyGroup");
 		ChartManager manager = ChartManager.getInstance();
+		GroupManager gmanager = GroupManager.getInstance();
 		
-		
-		
-		
-		List<TimeSlot> timeSlotList =  manager.getChart(studyGroup.getGroupId());
+		List<Member> memberList = gmanager.getMember(studyGroup.getGroupId());
+		List<TimeSlot> timeSlotList = null;
+		String memberId = request.getParameter("selectMember");
+		if(memberId!=null &&!memberId.equals("all") )
+			timeSlotList = manager.getUserChar(studyGroup.getGroupId(), memberId);
+		else
+			timeSlotList = manager.getChart(studyGroup.getGroupId());
 		
 		int[][] chart = new int[24][7];
 		
@@ -40,6 +46,7 @@ public class ChartController implements Controller{
 		
 		request.setAttribute("chart", chart);
 		request.setAttribute("timeSlotList", timeSlotList);
+		request.setAttribute("groupMemberList", memberList);
 		return "/group/schedule/chart.jsp";
 	}
 
